@@ -1,0 +1,35 @@
+# Only needed if you use the Supabase CLI for LOCAL development (`supabase start`).
+# The beginner path in the README (hosted project + SQL editor) does not use this file.
+# NOTE: this file was written without the Supabase CLI available, so it has not been run.
+project_id = "mule-princess"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 17
+
+[realtime]
+enabled = true
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:5173"
+additional_redirect_urls = ["http://localhost:5173", "http://127.0.0.1:5173"]
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+enable_signup = true
+minimum_password_length = 8
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = false   # local only: no mail server. Keep confirmations ON in your hosted project.
